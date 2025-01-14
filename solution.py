@@ -32,7 +32,7 @@ def process_pdf_directory(input_folder, output_file):
 
 if __name__ == "__main__":
     # Path for input pdf files
-    input_folder = "./pdfs"  
+    input_folder = "./data-processing/pdfs"  
     output_json = "output_data.json"
     
     # Extract and process PDFs
