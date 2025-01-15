@@ -30,12 +30,30 @@ def process_pdf_directory(input_folder, output_file):
 
     print(f"Data saved to {output_file}")
 
+def convert_json_to_csv(json_file, csv_file):
+    """Convert the JSON file to a CSV file"""
+    with open(json_file, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+
+    # Convert JSON data to a DataFrame and save as CSV
+    df = pd.DataFrame(data)
+    df.to_csv(csv_file, index=False)
+
+    print(f"Data saved to {csv_file}")
+ 
+
+
+
 if __name__ == "__main__":
     # Path for input pdf files
     input_folder = "./data-processing/pdfs"  
     output_json = "output_data.json"
+    output_csv = "output_data.csv"
     
     # Extract and process PDFs
     process_pdf_directory(input_folder, output_json)
+
+    # Convert JSON to CSV
+    convert_json_to_csv(output_json,output_csv)    
 
     
